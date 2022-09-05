@@ -26,15 +26,24 @@ class StopwatchRenderer extends StatelessWidget {
             borderRadius: BorderRadius.circular(radius),
           ),
         ),
-        ClockHand(
-          rotationZAngle: 0,
-          handThickness: 2,
-          handLength: radius,
-          color: Colors.orange,
-        )
-        // ElapsedTimeText(
-        //   elapsed: elapsedTime,
-        // ),
+        Positioned(
+          left: radius,
+          top: radius,
+          child: ClockHand(
+            rotationZAngle: pi + (2 * pi / 60000) * elapsedTime.inMilliseconds,
+            handThickness: 2,
+            handLength: radius,
+            color: Colors.orange,
+          ),
+        ),
+        Positioned(
+          left: 0,
+          right: 0,
+          top: radius * 1.3,
+          child: ElapsedTimeText(
+            elapsed: elapsedTime,
+          ),
+        ),
       ],
     );
   }
