@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:stop_watch/screens/elapsed_time_text.dart';
 import 'package:stop_watch/screens/widgets/clock_hand.dart';
+import 'package:stop_watch/screens/widgets/clock_markers.dart';
 import 'package:stop_watch/utils/app_layout.dart';
 
 class StopwatchRenderer extends StatelessWidget {
@@ -17,6 +18,12 @@ class StopwatchRenderer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        for (var i = 0; i < 60; i++)
+          Positioned(
+            left: radius,
+            top: radius,
+            child: ClockSecondsTickMarker(seconds: i, radius: radius),
+          ),
         Positioned(
           left: radius,
           top: radius,
