@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:stop_watch/screens/elapsed_time_text.dart';
+import 'package:stop_watch/screens/widgets/clock_hand.dart';
 import 'package:stop_watch/utils/app_layout.dart';
 
 class StopwatchRenderer extends StatelessWidget {
@@ -24,6 +25,12 @@ class StopwatchRenderer extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(radius),
           ),
+        ),
+        ClockHand(
+          rotationZAngle: 0,
+          handThickness: 2,
+          handLength: radius,
+          color: Colors.orange,
         )
         // ElapsedTimeText(
         //   elapsed: elapsedTime,
