@@ -15,6 +15,10 @@ class ClockHand extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      height: handLength,
+      width: handThickness,
+      color: color,
+    );
   }
 }
